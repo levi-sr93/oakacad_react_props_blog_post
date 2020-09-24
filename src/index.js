@@ -1,32 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom';
-
-import user1 from './img/user-1.jpg'
+import SingleComment from './components/SingleComment';
+import user1 from './img/user-1.jpg';
+import user2 from './img/user-2.jpg';
+import user3 from './img/user-3.jpg';
 
 const App = () => {
   return (
     <div className="ui comment">
-      <div className="comment">
-        <a href="/" className='avatar'>
-          <img src={user1} alt="Profile" style={{width: '200px'}}></img>
-        </a>
-        <div className="content">
-          <a href="/" className="author">
-            Sara
-          </a>
-          <div className="metadata">
-            <span className="date">
-              Today at 5:00PM
-            </span>
-          </div>
-          <div className="text">
-            it's amazing
-          </div>
-        </div>
-      </div>
+      <SingleComment name="Sarah" comment="Looks good" date="Today at 5:00PM" picture={user1} />
+      <SingleComment name="Alex" comment="That's nice" date="Today at 10:00PM" picture={user2}/>
+      <SingleComment name="Jack" comment="Good idea" date="Yesterday at 9:00AM" picture={user3}/>
     </div>
   )
 }
 
 
-ReactDOM.render(<App />, document.querySelector('#root'))
+ReactDOM.render(<App />, document.querySelector('#root'));
